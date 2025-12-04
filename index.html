@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun ke-22!</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h1>Selamat Ulang Tahun ke-22, Sayang!</h1>
+        <p>Masukkan Kode untuk Masuk ke Dunia Kejutan.</p>
+        
+        <div class="form-group">
+            <input type="text" id="secretCode" placeholder="Kode Rahasia..." required> 
+            <button id="loginButton" onclick="checkCode()">MASUK 💖</button>
+        </div>
+        
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <script>
+        // KODE RAHASIA: 5123
+        const CORRECT_CODE = "5123"; 
+
+        function checkCode() {
+            const userInput = document.getElementById('secretCode').value.trim(); // Hapus .toUpperCase() karena kode rahasia berupa angka
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Sembunyikan pesan error
+            errorMessage.classList.remove('show');
+            errorMessage.textContent = '';
+
+            if (userInput === CORRECT_CODE) {
+                // Jika benar, arahkan ke dashboard.html (berjalan di localhost)
+                window.location.href = "dashboard.html"; 
+            } else {
+                // Jika salah
+                errorMessage.textContent = "Kode Rahasia Salah! Coba Ingat Lagi Momen Spesial Kita...";
+                errorMessage.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>

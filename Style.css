@@ -1,0 +1,250 @@
+/* FONT IMPORTS - Sudah ada di HTML */
+:root {
+    /* Palet Warna */
+    --color-primary: #A0525D; /* Rose Dust/Burgundy */
+    --color-secondary: #F5E6E8; /* Soft Pink */
+    --color-background: #FFFBFB; /* Off-White */
+    --color-text: #333333;
+    --color-light-text: #666666;
+    --color-accent: #FFD700; /* Gold */
+}
+
+/* BASE STYLES */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--color-background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+/* --- Halaman Login (index.html) --- */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #E0BBE4 100%); 
+}
+
+.login-container {
+    background: white;
+    padding: 45px 55px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+input[type="text"] {
+    padding: 15px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Tombol */
+button, .button-primary, .button-secondary {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+button {
+    background: var(--color-primary);
+    color: white;
+}
+
+button:hover {
+    background: #8b454e; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: red;
+    margin-top: 15px;
+    height: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* --- Halaman Dashboard (dashboard.html) --- */
+
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    margin: 0;
+    font-weight: 300;
+}
+
+main {
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card ul li {
+    background: var(--color-secondary);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.card ul li:hover {
+    background: #f0cce0;
+}
+
+.button-primary {
+    background: var(--color-primary);
+    color: white;
+    margin-top: 15px;
+}
+
+.button-primary:hover {
+    background: #8b454e;
+}
+
+.button-secondary {
+    background: #CCCCCC;
+    color: var(--color-text);
+    margin-top: 10px;
+}
+
+.button-secondary:hover {
+    background: #BBBBBB;
+}
+
+.gallery-placeholder {
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 1px dashed var(--color-light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.gift-box {
+    background: var(--color-accent);
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.note {
+    font-style: italic;
+    color: var(--color-light-text);
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* Responsif sederhana */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px;
+    }
+    header h2 {
+        font-size: 2em;
+    }
+}
